@@ -6,9 +6,16 @@ import jwt from 'jsonwebtoken';
 dotenv.config();
 
 const app = express();
+const cors = require('cors');
+
+const allowedOrigins = [
+  'https://mw-tournament-47a145.netlify.app/', // your Netlify frontend
+  // add other allowed origins if needed
+];
+
 app.use(cors({
-  origin: 'https://mw-tournament-47a145.netlify.app',
-  credentials: true
+  origin: allowedOrigins,
+  credentials: true, // if you use cookies or authentication
 }));
 app.use(express.json());
 
