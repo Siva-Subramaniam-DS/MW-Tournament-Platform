@@ -1,15 +1,14 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import jwt from 'jsonwebtoken';
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken');
 
 dotenv.config();
 
 const app = express();
-const cors = require('cors');
 
 const allowedOrigins = [
-  'https://mw-tournament-47a145.netlify.app/', // your Netlify frontend
+  'https://mw-tournament-47a145.netlify.app',
   // add other allowed origins if needed
 ];
 
