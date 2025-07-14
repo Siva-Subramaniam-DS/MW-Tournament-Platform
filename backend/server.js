@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const jwt = require('jsonwebtoken');
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 
 dotenv.config();
 
@@ -14,8 +14,9 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: allowedOrigins,
-  credentials: true, // if you use cookies or authentication
+  credentials: true,
 }));
+
 app.use(express.json());
 
 const organizers = JSON.parse(process.env.AUTHORIZED_ORGANIZERS || '{}');
