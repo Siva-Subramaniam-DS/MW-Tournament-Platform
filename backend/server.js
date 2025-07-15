@@ -6,7 +6,13 @@ import jwt from 'jsonwebtoken';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// Allow only your Netlify frontend
+app.use(cors({
+  origin: 'https://mw-tournament-47a145.netlify.app',
+  credentials: true // if you need cookies/auth
+}));
+
 app.use(express.json());
 
 const organizers = JSON.parse(process.env.AUTHORIZED_ORGANIZERS || '{}');
