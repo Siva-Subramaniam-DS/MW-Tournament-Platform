@@ -72,7 +72,7 @@ function App() {
 
   const handleLogin = async (username, password) => {
     try {
-      const API_URL = import.meta.env.VITE_API_URL;
+      const API_URL = import.meta.env.VITE_API_URL || 'https://your-backend-url.onrender.com';
 
       const response = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
