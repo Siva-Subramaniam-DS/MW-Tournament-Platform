@@ -7,14 +7,10 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = [
-  'https://mw-tournament-47a145.netlify.app',
-  // add other allowed origins if needed
-];
-
+// Allow only your Netlify frontend
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true,
+  origin: 'https://mw-tournament-47a145.netlify.app',
+  credentials: true // if you need cookies/auth
 }));
 
 app.use(express.json());
